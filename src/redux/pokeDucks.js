@@ -5,12 +5,12 @@ const dataInicial = {
     offset: 0,
 }
 
-//Types
+//TYPES
 const OBTENER_POKEMONES_EXITO = "OBTENER_POKEMONES_EXITO";
 const SIGUIENTE_POKEMONES_EXITO = "SIGUIENTE_POKEMONES_EXITO";
 const ANTERIOR_POKEMONES_EXITO = "ANTERIOR_POKEMONES_EXITO";
 
-//Reducer
+//REUCER
 export default function pokeReducer(state = dataInicial, action) {
     switch (action.type) {
         case OBTENER_POKEMONES_EXITO:
@@ -23,7 +23,7 @@ export default function pokeReducer(state = dataInicial, action) {
             return state
     }
 }
-//Acciones
+//ACCIONES
 export const obtenerPokemonesAccion = () => async (dispatch, getState) => {
 
     const { offset } = getState().pokemones;

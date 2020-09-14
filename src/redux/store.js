@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 
 //Siempre se llaman los reducers.
 import pokeReducer from './pokeDucks';
+import gastoReducer from './gastoDucks';
 
 //Combinar todos los reducers(Ducks)
 const rootReducer = combineReducers({
-    pokemones: pokeReducer
+    pokemones: pokeReducer,
+    gastos: gastoReducer
 })
 
 //Para la extension de Redux Tools

@@ -22,6 +22,7 @@ import Game from './components/Game';
 import AoE from './components/AoE';
 import AoEDetail from './components/AoEDetail';
 import Pokemones from './components/Pokemones';
+import GastosCRUD from './components/GastosCRUD';
 
 function HolaMundo(nombre, años) {
   var presentacion = <div><h2>Hola, yo soy {nombre}</h2>
@@ -52,7 +53,11 @@ function App() {
           <NavLink className="btn btn-dark" to="/pokemones">
             Pokemones Redux
           </NavLink>
+          <NavLink className="btn btn-primary" to="/gastos">
+            Gastos CRUD
+          </NavLink>
         </div>
+        <Provider store={store}>
         <Switch>
           <Route path="/aoe/:id">
             <AoEDetail></AoEDetail>
@@ -77,18 +82,21 @@ function App() {
             <LoginComponent />
           </Route>
           <Route path="/customcomponent">
-            <p>4.-como mostrar listas en react</p>
+            <h2>4.-Componente Personalizado</h2>
+            <p>Mostrar listas en un componente</p>
             <ComponenteDiego></ComponenteDiego>
           </Route>
           <Route path="/aoe">
             <AoE></AoE>
           </Route>
           <Route path="/pokemones">
-            <Provider store={store}>
             <Pokemones/>
-            </Provider>
+          </Route>
+          <Route path="/gastos">
+            <GastosCRUD/>
           </Route>
         </Switch>
+        </Provider>
       </Router>
     </div>
   );
